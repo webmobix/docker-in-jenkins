@@ -2,7 +2,7 @@ FROM jenkins/jenkins:lts-alpine
 
 USER root
 
-RUN apk add docker
-RUN addgroup jenkins docker
+RUN apk add --no-cache docker \
+  && addgroup jenkins docker
 
 USER jenkins
